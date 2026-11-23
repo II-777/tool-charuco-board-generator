@@ -1,14 +1,24 @@
 # ChArUco board
 
-Writes the printed sheet that `tool-charuco-camera-calibration` reads. Each square is 30 mm. The page is smaller than US Letter on purpose: a full-page PDF gets shrunk into the printer's margins.
+Prints a ChArUco sheet with squares of a known size, and the spec `tool-charuco-camera-calibration` reads with `--spec`.
 
-![ChArUco board](assets/charuco-board.png)
+Default sheet: **5×7** squares, **30 mm** square, **22.5 mm** marker, **DICT_4X4_50**. The PDF is smaller than US Letter so the printer does not shrink it into the margins.
+
+## Setup
+
+Python **3.10+**.
 
 ```bash
 uv sync
 uv run python main.py
 ```
 
-That writes `outputs/charuco-board.pdf` and `outputs/charuco-board.yml`. Print the PDF at **actual size** on letter paper. Do not scale to fit. Blank paper around the sheet is expected. The line on the sheet is 100 mm. If that line is not 100 mm, the squares are not 30 mm.
+Writes `outputs/charuco-board.pdf` and `outputs/charuco-board.yml`.
 
-Pass `outputs/charuco-board.yml` to the calibration tool with `--spec`. The square count, dictionary, and millimetre sizes in that file are the board the camera must be shown.
+## IMPORTANT
+
+- Print at **actual size (100%)** on **US Letter**.
+- **Do not scale to fit.** Blank margins around the sheet are expected.
+- The bar on the sheet is **100 mm**. If it is not, the squares are not 30 mm.
+
+![ChArUco board](assets/charuco-board.png)
