@@ -21,4 +21,6 @@ Writes `outputs/charuco-board.pdf` and `outputs/charuco-board.yml`.
 - **Do not scale to fit.** Blank margins around the sheet are expected.
 - The bar on the sheet is **100 mm**. If it is not, the squares are not 30 mm.
 
+[Download sample PDF](outputs/charuco-board.pdf)
+
 ![ChArUco board](assets/charuco-board.png)
